@@ -33,7 +33,7 @@
       ></app-grouped-item>
 
       <ng-container *ngIf="isGrid">
-        <h2 *ngIf="localStorage.get('emojis').length && !(hasSearch$ | async)">
+        <h2 *ngIf="localStorage.get('emojis')?.length && !(hasSearch$ | async)">
           Others
         </h2>
         <app-item-list
