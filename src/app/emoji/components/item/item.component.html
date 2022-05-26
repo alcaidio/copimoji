@@ -1,7 +1,6 @@
 <button
   matRipple
   (click)="onAction(emoji, $event)"
-  [matTooltip]="clickable ? (emoji.annotation | title) : ''"
   [ngClass]="{
     small: size === 'S',
     large: size === 'L',
