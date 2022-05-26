@@ -4,13 +4,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build-dev": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run copimoji:serve-ssr",
     "serve:ssr": "node dist/copimoji/server/main.js",
     "build:ssr": "ng build && ng run copimoji:server",
-    "prerender": "ng run copimoji:prerender"
+    "prerender": "ng run copimoji:prerender",
+    "vercel-build": "npm run build:ssr"
   },
   "private": true,
   "dependencies": {
