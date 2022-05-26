@@ -1,17 +1,17 @@
-<header>
-  <app-title></app-title>
+<ng-container *ngIf="emojis$ | async as emojis; else loading">
+  <header>
+    <app-title></app-title>
 
-  <app-search-bar
-    [style]="{ height: '68px', width: '240px' }"
-    (search)="onSearch($event)"
-    class="desktop"
-  ></app-search-bar>
+    <app-search-bar
+      [style]="{ height: '68px', width: '240px' }"
+      (search)="onSearch($event)"
+      class="desktop"
+    ></app-search-bar>
 
-  <app-toggle (toggle)="onChangeTemplate()" class="desktop"></app-toggle>
-</header>
+    <app-toggle (toggle)="onChangeTemplate()"></app-toggle>
+  </header>
 
-<main>
-  <ng-container *ngIf="emojis$ | async as emojis">
+  <main>
     <ng-container *ngIf="emojis.length; else empty">
       <ng-container *ngIf="localStorage.get('emojis') as cacheEmojis">
         <ng-container *ngIf="cacheEmojis.length && !(hasSearch$ | async)">
@@ -49,10 +49,16 @@
     <div class="actions">
       <app-search-bar (search)="onSearch($event)"></app-search-bar>
     </div>
-  </ng-container>
-</main>
+  </main>
 
-<footer *ngIf="emojis$ | async">
-  Made with ❤️ &nbsp; by
-  <a href="https://github.com/timothyalcaide">Timothy</a>
-</footer>
+  <footer>
+    Made with ❤️ &nbsp; by
+    <a href="https://github.com/timothyalcaide">Timothy</a>
+  </footer>
+</ng-container>
+
+<ng-template #loading>
+  <div class="loader">
+    <app-icon></app-icon>
+  </div>
+</ng-template>

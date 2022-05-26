@@ -20,7 +20,8 @@ import { EmojiRoutingModule } from './emoji-routing.module';
 import { EmojiComponent } from './emoji.component';
 import { FormatPipe } from './pipe/format.pipe';
 import { EmojiService } from './services/emoji.service';
-import { TitleComponent } from './title/title.component';
+import { TitleComponent } from './components/title/title.component';
+import { IconComponent } from './components/icon/icon.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { TitleComponent } from './title/title.component';
     FormatPipe,
     TitleComponent,
     ToggleComponent,
+    IconComponent,
   ],
   imports: [
     CommonModule,
