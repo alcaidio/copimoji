@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./emoji/emoji.module').then((m) => m.EmojiModule),
   },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
 @NgModule({
   imports: [

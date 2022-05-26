@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { urlFormat } from 'src/app/utils/utils';
@@ -31,7 +32,9 @@ export class DialogComponent implements OnInit {
     private clipboard: Clipboard,
     private snackBar: MatSnackBar,
     private service: EmojiService,
-    private router: Router
+    private router: Router,
+    private meta: Meta,
+    private titleMeta: Title
   ) {
     this.relatedEmojis$ = this.service.emojisSubGrouped$.pipe(
       map((group) =>
@@ -43,7 +46,27 @@ export class DialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.displayEmoji = this.data.emoji;
+    const { emoji } = this.data;
+
+    this.displayEmoji = emoji;
+
+    this.titleMeta.setTitle(
+      `Copimoji - ${emoji.annotation} emoji ${emoji.emoji}`
+    );
+
+    this.meta.updateTag({
+      name: 'description',
+      content: `${
+        emoji.emoji + ' ' + emoji.annotation
+      } emoji, is part of the group "${emoji.group}" and subgroup "${
+        emoji.subgroups
+      }".`,
+    });
+
+    this.meta.updateTag({
+      name: 'keywords',
+      content: emoji.tags,
+    });
   }
 
   onChangeEmoji(emoji: Emoji) {
