@@ -1,0 +1,58 @@
+<div *ngIf="displayEmoji as emoji" class="dialog">
+  <button
+    mat-icon-button
+    aria-label="close dialog"
+    mat-dialog-close
+    class="close"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
+  <h1 mat-dialog-title>{{ emoji.annotation | format }}</h1>
+  <div>
+    <app-item [emoji]="emoji" [clickable]="false" size="L"></app-item>
+
+    <table>
+      <tr>
+        <td>Group</td>
+        <td>{{ emoji.group | format }}</td>
+      </tr>
+      <tr>
+        <td>Subgroup</td>
+        <td>{{ emoji.subgroups | format }}</td>
+      </tr>
+      <tr>
+        <td>Hexcode</td>
+        <td matRipple (click)="onCopyHexcode(emoji.hexcode)" class="clickable">
+          {{ emoji.hexcode | format }}
+        </td>
+      </tr>
+      <tr>
+        <td>Tags</td>
+        <td>
+          {{ emoji.tags }}
+        </td>
+      </tr>
+      <tr *ngIf="emoji.date as date">
+        <td>Copy date</td>
+        <td>
+          {{ date | date }}
+        </td>
+      </tr>
+    </table>
+
+    <div *ngIf="relatedEmojis$ | async as related" class="related">
+      <ng-container *ngIf="related.length">
+        <h2>Related emoji</h2>
+
+        <app-item-list
+          [emojis]="related"
+          [isGrid]="true"
+          [clickable]="true"
+          [noPadding]="true"
+          size="S"
+          (details)="onChangeEmoji($event)"
+        ></app-item-list>
+      </ng-container>
+    </div>
+  </div>
+</div>

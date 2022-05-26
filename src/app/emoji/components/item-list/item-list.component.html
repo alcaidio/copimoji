@@ -1,0 +1,17 @@
+<div
+  [ngClass]="{
+    list: !isGrid,
+    grid: isGrid,
+    small: size === 'S',
+    large: size === 'L',
+    p0: noPadding
+  }"
+>
+  <app-item
+    *ngFor="let emoji of emojis; trackBy: trackByEmoji"
+    [emoji]="emoji"
+    [clickable]="clickable"
+    [size]="size"
+    (details)="details.emit($event)"
+  ></app-item>
+</div>

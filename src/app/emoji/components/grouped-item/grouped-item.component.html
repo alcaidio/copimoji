@@ -1,0 +1,7 @@
+<section *ngFor="let group of groups">
+  <h2>{{ group.key | format | title }}</h2>
+  <app-item-list
+    [emojis]="group.values"
+    (details)="details.emit($event)"
+  ></app-item-list>
+</section>

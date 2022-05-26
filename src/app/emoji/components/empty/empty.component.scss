@@ -1,0 +1,21 @@
+.empty {
+  width: calc(100vw - 24px);
+  max-width: 500px;
+  height: auto;
+  margin: 0 auto;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  h2 {
+    padding: 0 12px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.6rem;
+    font-family: "Indie Flower", cursive;
+    text-align: center;
+  }
+}

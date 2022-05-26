@@ -1,0 +1,51 @@
+.dialog {
+  overflow: hidden;
+  text-align: center;
+  min-width: 300px;
+  max-width: 600px;
+  position: relative;
+
+  .close {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  h1 {
+    font-family: "Indie Flower", cursive;
+    margin-top: 56px;
+  }
+
+  table {
+    width: 100%;
+    padding: 8px 0;
+    border-spacing: 1px;
+
+    td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 4px;
+    }
+
+    tr {
+      td:first-of-type {
+        width: 40%;
+      }
+    }
+
+    .clickable {
+      cursor: copy;
+
+      &:hover {
+        background-color: #e7e7e7;
+      }
+    }
+  }
+
+  .related {
+    h2 {
+      margin-top: 0.5rem;
+      margin-bottom: 0.2rem;
+    }
+  }
+}

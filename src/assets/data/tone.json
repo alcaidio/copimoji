@@ -1,0 +1,57 @@
+[
+  {
+    "emoji": "🏻",
+    "hexcode": "1F3FB",
+    "group": "component",
+    "subgroups": "skin-tone",
+    "annotation": "light skin tone",
+    "tags": "skin tone, type 1–2",
+    "unicode": 1,
+    "order": 3164,
+    "skins": []
+  },
+  {
+    "emoji": "🏼",
+    "hexcode": "1F3FC",
+    "group": "component",
+    "subgroups": "skin-tone",
+    "annotation": "medium-light skin tone",
+    "tags": "skin tone, type 3",
+    "unicode": 1,
+    "order": 3165,
+    "skins": []
+  },
+  {
+    "emoji": "🏽",
+    "hexcode": "1F3FD",
+    "group": "component",
+    "subgroups": "skin-tone",
+    "annotation": "medium skin tone",
+    "tags": "skin tone, type 4",
+    "unicode": 1,
+    "order": 3166,
+    "skins": []
+  },
+  {
+    "emoji": "🏾",
+    "hexcode": "1F3FE",
+    "group": "component",
+    "subgroups": "skin-tone",
+    "annotation": "medium-dark skin tone",
+    "tags": "skin tone, type 5",
+    "unicode": 1,
+    "order": 3167,
+    "skins": []
+  },
+  {
+    "emoji": "🏿",
+    "hexcode": "1F3FF",
+    "group": "component",
+    "subgroups": "skin-tone",
+    "annotation": "dark skin tone",
+    "tags": "skin tone, type 6",
+    "unicode": 1,
+    "order": 3168,
+    "skins": []
+  }
+]

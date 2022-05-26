@@ -1,0 +1,53 @@
+:host {
+  display: block;
+}
+
+.list {
+  padding: 0 8px; // dont remove
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 8px;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  app-item {
+    flex: 0 0 auto;
+  }
+
+  &.small {
+    gap: 6px;
+  }
+
+  &.large {
+    gap: 10px;
+  }
+}
+
+.grid {
+  padding: 0 8px; // dont remove
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-items: flex-start;
+  gap: 8px;
+
+  app-item {
+    flex: 1;
+  }
+
+  &.small {
+    gap: 6px;
+  }
+
+  &.large {
+    gap: 10px;
+  }
+}
+
+.p0 {
+  padding: 0;
+}
