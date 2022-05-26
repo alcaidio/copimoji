@@ -28,6 +28,7 @@
     "@angular/router": "~13.3.0",
     "@nguniversal/express-engine": "^13.1.1",
     "express": "^4.15.2",
+    "mixpanel-browser": "^2.45.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

@@ -1,6 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import mixpanel from 'mixpanel-browser';
 import { BehaviorSubject } from 'rxjs';
 import { CanonicalService } from './shared/canonical.service';
 
@@ -18,6 +19,8 @@ export class AppComponent implements OnInit {
     private canonical: CanonicalService
   ) {
     AppComponent.isBrowser.next(isPlatformBrowser(platformId));
+    mixpanel.init('cd3e6ce3d5e006b591a1131c876b4ed5', { debug: true });
+    mixpanel.track('Homepage');
   }
 
   ngOnInit(): void {
